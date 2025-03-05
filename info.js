@@ -1,7 +1,7 @@
 export const info = {
   legalName: 'CONSTRUVASI SA DE CV',
-  companyName: 'Sibaria Residencial',
-  description: 'La vida bien vivida',
+  companyName: 'Quarat',
+  description: 'Vivir de tus rentas sí es posible',
   email: {
     sender: 'ventas@sibariaresidencial.com',
     recipients: ['ventas@sibariaresidencial.com'],
@@ -10,7 +10,7 @@ export const info = {
   phoneNumber: '+',
   whatsapp: {
     value: '+',
-    message: 'Buen día, me puede dar más información sobre las casas de Sibaria Residencial',
+    message: 'Buen día, me puede dar más información sobre su administración de departamentos?',
   },
   social: {
     facebook: 'quarat.mx',
