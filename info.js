@@ -13,8 +13,8 @@ export const info = {
     message: "Buen día, me puede dar más información sobre las casas de Sibaria Residencial",
   },
   social: {
-    facebook: "",
-    instagram: "",
+    facebook: "quarat.mx",
+    instagram: "quarat.mx",
   },
   address: {
     address: "Sab Miguel 424",
