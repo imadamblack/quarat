@@ -91,6 +91,36 @@ export default function Home() {
       </section>
 
       <Blockbuster
+        overhead="Testimonios"
+        title="Ellos ya dejaron de sufrir con inquilinos, ¿y tú?"
+        image={i07}
+      />
+      <section className="px-12 my-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="relative w-full pt-[200%]">
+            <Image src={i08} layout="fill" objectFit="contain"/>
+          </div>
+          <div className="relative w-full pt-[200%]">
+            <Image src={i09} layout="fill" objectFit="contain"/>
+          </div>
+          <div className="relative w-full pt-[200%]">
+            <Image src={i10} layout="fill" objectFit="contain"/>
+          </div>
+          <div className="relative w-full pt-[200%]">
+            <Image src={i11} layout="fill" objectFit="contain"/>
+          </div>
+
+        </div>
+
+        <div className="flex flex-col justify-center mt-16 items-center">
+          <Link href="#contact">
+            <a onClick={() => setLastClick('testimonials')} className="button mb-4">{cta.main}</a>
+          </Link>
+          <p className="-ft-2 text-center">{cta.description}</p>
+        </div>
+      </section>
+
+      <Blockbuster
         overhead="Beneficios"
         title="¿Por qué deberías dejar que nos encarguemos de tu depa?"
         description="Aquí cinco razones (aunque podríamos darte más, pero con estas te convencemos de sobra)"
@@ -207,36 +237,6 @@ export default function Home() {
       </section>
 
       <Blockbuster
-        overhead="Testimonios"
-        title="Ellos ya dejaron de sufrir con inquilinos, ¿y tú?"
-        image={i07}
-      />
-      <section className="px-12 my-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div className="relative w-full pt-[200%]">
-          <Image src={i08} layout="fill" objectFit="contain"/>
-        </div>
-        <div className="relative w-full pt-[200%]">
-          <Image src={i09} layout="fill" objectFit="contain"/>
-        </div>
-        <div className="relative w-full pt-[200%]">
-          <Image src={i10} layout="fill" objectFit="contain"/>
-        </div>
-        <div className="relative w-full pt-[200%]">
-          <Image src={i11} layout="fill" objectFit="contain"/>
-        </div>
-
-        </div>
-
-        <div className="flex flex-col justify-center mt-16 items-center">
-          <Link href="#contact">
-            <a onClick={() => setLastClick('specs')} className="button mb-4">{cta.main}</a>
-          </Link>
-          <p className="-ft-2 text-center">{cta.description}</p>
-        </div>
-      </section>
-
-      <Blockbuster
         overhead="Garantías"
         title="Más de 100 clientes viviendo de sus rentas"
         image={i12}
@@ -259,7 +259,7 @@ export default function Home() {
 
         <div className="flex flex-col justify-center items-center mt-16">
           <Link href="#contact">
-            <a onClick={() => setLastClick('target')} className="button mb-4">{cta.main}</a>
+            <a onClick={() => setLastClick('guarantees')} className="button mb-4">{cta.main}</a>
           </Link>
           <p className="-ft-2 text-center text-white">{cta.description}</p>
         </div>
