@@ -4,7 +4,7 @@ import Link from 'next/link';
 import OptInForm from '../components/form/opt-in-form';
 import { useEffect, useState } from 'react';
 import scrollDepth from '../utils/scrollDepth';
-import i00 from '../../public/landing/00.png';
+import i00 from '../../public/landing/00.jpg';
 import i01 from '../../public/landing/01.png';
 import i02 from '../../public/landing/02.png';
 import i03 from '../../public/landing/03.png';
@@ -54,14 +54,14 @@ export default function Home() {
         <div className="container w-full text-left z-10 p-8">
           <h1
             className="md:w-2/3 relative font-bold ft-11 text-white [text-shadow:_2px_2px_0_rgb(0_0_0_/_20%)]">
-            Rentamos tu depa en Airbnb para que ahora sí vivas de tus rentas
+            Tu depa en Airbnb puede generarte hasta 40% más ingresos que la renta tradicional
           </h1>
-          <p className="ft-3 md:w-max mt-4 py-2 px-12 bg-brand-2 rounded-2xl">Administración de propiedades para rentas a corto plazo en Airbnb</p>
+          <p className="ft-3 mt-4 py-2 text-white">Administración de propiedades en Airbnb</p>
           <div className="flex flex-col justify-start items-start mt-12">
             {/*<Link href="#contact">*/}
             {/*  <a onClick={() => setLastClick('hero')} className="button mb-4">{cta.main}</a>*/}
             {/*</Link>*/}
-            <p className="-ft-2 text-white md:text-left">{cta.description}</p>
+            <p className="-ft-1 text-white md:text-left">{cta.description}</p>
           </div>
           <p className="material-icons text-white animate-bounce"><span className="ft-9">expand_more</span></p>
 
@@ -92,7 +92,7 @@ export default function Home() {
 
       <Blockbuster
         overhead="Testimonios"
-        title="Ellos ya dejaron de sufrir con inquilinos, ¿y tú?"
+        title="Más de 100 propiedades administradas hasta hoy, esto dicen sus dueños:"
         image={i07}
       />
       <section className="px-12 my-16">
