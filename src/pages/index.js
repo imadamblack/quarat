@@ -37,8 +37,8 @@ export default function Home() {
   });
 
   const cta = {
-    main: 'Regístrate, da clic',
-    description: 'Agenda una evaluación gratuita y empieza a generar más rentas',
+    main: 'Renta tu depa, da clic',
+    description: 'Agenda una evaluación gratuita de tu depa y empieza a generar más rentas',
   };
 
   return (
@@ -203,7 +203,7 @@ export default function Home() {
         title="Tu depa con estrellita de Super Host, sin que hagas nada"
         image={i03}
       />
-      <section className="container px-16 my-16">
+      <section className="container md:px-16 my-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col rounded-2xl p-8 border-2 border-brand-3">
             <div className="relative h-[48rem] rounded-2xl overflow-hidden flex items-center mb-8">
@@ -268,7 +268,7 @@ export default function Home() {
 
       <Blockbuster
         overhead="Preguntas frecuentes"
-        title="Todo lo que quieres saber antes de mudarte a Sibaria está aquí"
+        title="Si tienes dudas, probablemente estén aquí"
         image={i13}
       />
       <section className="container py-8">
@@ -280,11 +280,11 @@ export default function Home() {
         <div className="container">
           <div className="w-full md:w-1/2 mx-auto">
             <h2 className="!font-bold text-white">
-              Agenda una evaluación gratuita y empieza a generar más rentas
+              Agenda una evaluación gratuita de tu depa y empieza a generar más rentas
             </h2>
             <div className="mt-20 mb-12">
               <p className="ft-1 text-white">
-                Déjanos tus datos y agenda una videollamada para darte más información sobre como administraremos tu depa.
+                Déjanos tus datos, agenda una videollamada para conocernos y programemos una visita a tu depa.
               </p>
             </div>
             <OptInForm
