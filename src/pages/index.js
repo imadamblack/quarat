@@ -4,7 +4,7 @@ import Link from 'next/link';
 import OptInForm from '../components/form/opt-in-form';
 import { useEffect, useState } from 'react';
 import scrollDepth from '../utils/scrollDepth';
-import i00 from '../../public/landing/00.jpg';
+import i00 from '../../public/landing/00.png';
 import i01 from '../../public/landing/01.png';
 import i02 from '../../public/landing/02.png';
 import i03 from '../../public/landing/03.png';
@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative min-h-[80vh] w-full flex flex-col md:justify-end items-center bg-brand-1">
+      <section className="relative min-h-[64rem] w-full flex flex-col md:justify-end items-center bg-brand-1">
 
         <div className="relative min-h-[24rem] flex-grow w-full md:absolute top-0 inset-x-0 bottom-1/2 md:bottom-0">
           <div
