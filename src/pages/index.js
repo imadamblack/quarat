@@ -37,7 +37,7 @@ export default function Home() {
   });
 
   const cta = {
-    main: 'Renta tu depa, da clic',
+    main: 'Contáctanos, da clic',
     description: 'Agenda una evaluación gratuita de tu depa y empieza a generar más rentas',
   };
 
@@ -54,9 +54,9 @@ export default function Home() {
         <div className="container w-full text-left z-10 p-8">
           <h1
             className="md:w-2/3 relative font-bold ft-11 text-white [text-shadow:_2px_2px_0_rgb(0_0_0_/_20%)]">
-            Tu depa en Airbnb puede generarte hasta 40% más ingresos que la renta tradicional
+            Rentar tu depa en Airbnb puede generarte 40% más ingresos que la renta tradicional
           </h1>
-          <p className="ft-3 mt-4 py-2 text-white">Administración de propiedades en Airbnb</p>
+          <p className="ft-3 mt-4 py-2 text-white">Administramos tus propiedades en Airbnb como Super Host</p>
           <div className="flex flex-col justify-start items-start mt-12">
             {/*<Link href="#contact">*/}
             {/*  <a onClick={() => setLastClick('hero')} className="button mb-4">{cta.main}</a>*/}
@@ -92,7 +92,7 @@ export default function Home() {
 
       <Blockbuster
         overhead="Testimonios"
-        title="Más de 100 propiedades administradas hasta hoy, esto dicen sus dueños:"
+        title="Más de 100 propiedades administradas y esto dicen sus dueños:"
         image={i07}
       />
       <section className="px-12 my-16">
@@ -200,7 +200,7 @@ export default function Home() {
 
       <Blockbuster
         overhead="Amenidades"
-        title="Tu depa con estrellita de Super Host, sin que hagas nada"
+        title="Tu depa con medalla de Super Host, sin que hagas nada"
         image={i03}
       />
       <section className="container md:px-16 my-16">
@@ -238,7 +238,7 @@ export default function Home() {
 
       <Blockbuster
         overhead="Garantías"
-        title="Más de 100 clientes viviendo de sus rentas"
+        title="Cuidamos tus depas como si fueran nuestros"
         image={i12}
       />
       <section className="py-16 bg-[#1c1c1c]">
@@ -280,11 +280,12 @@ export default function Home() {
         <div className="container">
           <div className="w-full md:w-1/2 mx-auto">
             <h2 className="!font-bold text-white">
-              Agenda una evaluación gratuita de tu depa y empieza a generar más rentas
+              Programa una evaluación gratuita de tu depa y empieza a generar más rentas
             </h2>
             <div className="mt-20 mb-12">
               <p className="ft-1 text-white">
-                Déjanos tus datos, agenda una videollamada para conocernos y programemos una visita a tu depa.
+                Ya llegasta hasta acá, ya leíste todo nuestro cuento.<br/>
+                Déjanos tus datos y platiquemos de como podemos generarte más rentas.
               </p>
             </div>
             <OptInForm
