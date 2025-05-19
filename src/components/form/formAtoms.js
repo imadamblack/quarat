@@ -11,7 +11,12 @@ export const Select = ({name, inputOptions, options, placeholder, className = ''
       >
         <option value="" disabled selected>{placeholder}</option>
         {/* eslint-disable-next-line react/jsx-key */}
-        {options.map((opt) => <option value={opt.value}>{opt.name}</option>)}
+        {options.map((opt) => {
+          if (opt.disabled) {
+            return <option value={opt.value} disabled>{opt.label}</option>;
+          }
+          return <option value={opt.value}>{opt.label}</option>;
+        })}
       </select>
     </div>
   );

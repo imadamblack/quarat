@@ -1,7 +1,7 @@
 'use client';
 import { useForm, FormProvider } from 'react-hook-form';
 import { useEffect, useState } from 'react';
-import { Radio, Checkbox } from '../components/form/formAtoms';
+import { Radio, Checkbox, Select } from '../components/form/formAtoms';
 import { useRouter } from 'next/router';
 import { setCookie, getCookie } from 'cookies-next';
 import { info } from '../../info';
@@ -12,8 +12,28 @@ const formSteps = [
   {
     name: 'area',
     title: `Ok, prometo hacer esto lo más rápido y sencillo posible, <br/>son solo 4 preguntas.`,
-    description: '¿En qué zona de la ciudad o en qué desarrollo está tu depa?',
-    type: 'text',
+    description: '¿En qué zona está tu depa?',
+    type: 'select',
+    placeholder: 'Selecciona una zona',
+    options: [
+      {value: '', label: '--- ZMG ---', disabled: true},
+      {value: 'andares', label: 'Andares'},
+      {value: 'arcos-vallarta', label: 'Arcos Vallarta'},
+      {value: 'colomos', label: 'Bosque Colomos'},
+      {value: 'chapalita', label: 'Chapalita'},
+      {value: 'ciudad-granja', label: 'Ciudad Granja'},
+      {value: 'country', label: 'Country'},
+      {value: 'expo', label: 'Expo Guadalajara'},
+      {value: 'monraz', label: 'Monraz'},
+      {value: 'providencia', label: 'Providencia'},
+      {value: 'valle-real', label: 'Valle Real'},
+      {value: 'zapopan-centro', label: 'Zapopan Centro'},
+      {value: '', label: '--- Vallarta ---', disabled: true},
+      {value: 'bucerias', label: 'Bucerías'},
+      {value: 'nuevo-vallarta', label: 'Nuevo Vallarta'},
+      {value: 'jarreteadas', label: 'Las Jarreteadas'},
+      {value: 'vidanta', label: 'Vidanta'},
+    ],
     inputOptions: {required: true}
   },
   {
@@ -177,6 +197,23 @@ export default function Survey() {
                         placeholder={placeholder}
                         options={options}
                         optCols={cols}
+                        className={inputError === idx ? '!border-brand-2' : undefined}
+                      />
+                    </div>
+                  );
+                }
+                if (fs.type === 'select') {
+                  const {name, title, description, placeholder, inputOptions, options, cols} = fs;
+                  return (
+                    // eslint-disable-next-line react/jsx-key
+                    <div className={`my-20 ${formStep === idx ? 'flex flex-col' : 'hidden'}`}>
+                      <p className="ft-4 sans font-bold" dangerouslySetInnerHTML={{__html: title}}/>
+                      <p className="ft-2 mt-4 mb-12" dangerouslySetInnerHTML={{__html: description}}/>
+                      <Select
+                        name={name}
+                        inputOptions={inputOptions}
+                        placeholder={placeholder}
+                        options={options}
                         className={inputError === idx ? '!border-brand-2' : undefined}
                       />
                     </div>
