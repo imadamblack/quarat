@@ -11,16 +11,17 @@ import { restrictNumber } from '../utils/formValidators';
 const formSteps = [
   {
     name: 'area',
-    title: `Ok, prometo hacer esto lo más rápido y sencillo posible, <br/>son solo 4 preguntas.`,
+    title: `Ok, prometo hacer esto lo más rápido y sencillo posible, <br/>son solo 6 preguntas.`,
     description: '¿En qué zona está tu depa?',
     type: 'select',
     placeholder: 'Selecciona una zona',
     options: [
       {value: '', label: '--- ZMG ---', disabled: true},
       {value: 'andares', label: 'Andares'},
+      {value: 'americana', label: 'Americana'},
       {value: 'arcos-vallarta', label: 'Arcos Vallarta'},
       {value: 'colomos', label: 'Bosque Colomos'},
-      {value: 'chapalita', label: 'Chapalita'},
+      {value: 'chapultepec', label: 'Chapultepec'},
       {value: 'ciudad-granja', label: 'Ciudad Granja'},
       {value: 'country', label: 'Country'},
       {value: 'expo', label: 'Expo Guadalajara'},
@@ -34,6 +35,28 @@ const formSteps = [
       {value: 'jarreteadas', label: 'Las Jarreteadas'},
       {value: 'vidanta', label: 'Vidanta'},
     ],
+    inputOptions: {required: true}
+  },
+  {
+    name: 'building',
+    title: `¿En qué desarrollo está tu depa?`,
+    type: 'text',
+    placeholder: 'Si no tiene nombre pon "Sin nombre"',
+    inputOptions: {required: true}
+  },
+  {
+    name: 'bedrooms',
+    title: `¿De cuántas habitaciones es tu depa?`,
+    type: 'radio',
+    placeholder: 'Selecciona una opción',
+    options: [
+      {value: 'loft', label: 'Loft'},
+      {value: '1-bedroom', label: '1 Habitación'},
+      {value: '2-bedroom', label: '2 Habitaciones'},
+      {value: '3-bedroom', label: '3 Habitaciones'},
+      {value: 'pent-house', label: 'Pent House'},
+    ],
+    cols: 1,
     inputOptions: {required: true}
   },
   {
@@ -51,8 +74,7 @@ const formSteps = [
   },
   {
     name: 'furniture',
-    title: 'En caso de necesitar adecuación de mobiliario, ¿Estás dispuesto a invertir en este?',
-    description: 'Considera al rededor de $100,000 mxn para ello, recuerda que podemos financiarlo',
+    title: '¿Ya lo tienes amueblado?',
     type: 'radio',
     options: [
       {value: 'amueblado', label: 'Sí'},
@@ -64,7 +86,7 @@ const formSteps = [
   },
   {
     name: 'commitment',
-    title: '¿Contamos con tu asistencia puntual el día y hora que selecciones?',
+    title: 'Estás a punto de programar una cita con nosotros. ¿Contamos con tu asistencia puntual el día y hora que selecciones?',
     description: 'Dado al volumen de solicitudes que tenemos, en ocasiones es complicado re-agendar.',
     type: 'radio',
     options: [
