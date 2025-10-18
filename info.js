@@ -23,7 +23,7 @@ export const info = {
     city: 'Guadalajara',
     state: 'Jalisco',
   },
-  optInWebhook: 'https://hook.us1.make.com/qlb2uaz7zmweh6ynoqxc8r1v3ud14o8v',
+  optInWebhook: 'https://n8n.notoriovs.com/webhook/a2dbfe5b-99b2-444a-8da7-2f39ee822a70',
   surveyWebhook: 'https://hook.us1.make.com/djuso7fpyqfooluhabg6fjkusbd355h5',
   surveyRedirect: '',
   privacyNotice: '/aviso-privacidad',

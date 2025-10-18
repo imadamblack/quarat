@@ -139,7 +139,7 @@ export default function Survey() {
     const payload = {...data, id, fullName, email, phone, _fbc, _fbp};
     console.log('payload',payload);
 
-    fetch(info.surveyWebhook, {
+    fetch(info.optInWebhook, {
       method: 'POST',
       body: JSON.stringify(payload),
       headers: {
