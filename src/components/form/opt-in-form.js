@@ -36,12 +36,12 @@ export default function OptInForm({lastClick = ''}) {
       },
     }).then((result) => result.json())
       // Send FB Event
-      .then(({id}) => {
+      .then(({id, row}) => {
         fbEvent(
           'Lead',
           {email: data.email, phone: data.phone, externalID: id},
         );
-        setCookie('lead', {...data, id});
+        setCookie('lead', {...data, id, row});
         router.push(`/survey?id=${id}`);
       })
       .catch(() => {

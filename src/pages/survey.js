@@ -132,11 +132,11 @@ export default function Survey() {
   const onSubmit = (data) => {
     setSending(true);
     const lead = getCookie('lead');
-    const {id, email, phone, fullName} = JSON.parse(lead);
+    const {id, row, email, phone, fullName} = JSON.parse(lead);
     const _fbc = getCookie('_fbc');
     const _fbp = getCookie('_fbp');
 
-    const payload = {...data, id, fullName, email, phone, _fbc, _fbp};
+    const payload = {...data, id, row, fullName, email, phone, _fbc, _fbp};
     console.log('payload',payload);
 
     fetch(info.optInWebhook, {
