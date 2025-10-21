@@ -24,8 +24,8 @@ export const info = {
     state: 'Jalisco',
   },
   optInWebhook: 'https://n8n.notoriovs.com/webhook/a2dbfe5b-99b2-444a-8da7-2f39ee822a70',
-  surveyWebhook: 'https://hook.us1.make.com/djuso7fpyqfooluhabg6fjkusbd355h5',
-  surveyRedirect: '',
+  surveyWebhook: '',
+  surveyRedirect: 'https://calendly.com/quaratrentals/evaluacion-airbnb',
   privacyNotice: '/aviso-privacidad',
   termsConditions: '/aviso-privacidad',
 };

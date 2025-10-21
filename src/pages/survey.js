@@ -154,7 +154,7 @@ export default function Survey() {
       .then(() => {
         if (info.surveyRedirect !== '') {
           const forwardLink = document.createElement('a');
-          forwardLink.href = info.surveyRedirect + `?name=${fullName}&email=${email}&phone${phone}`;
+          forwardLink.href = info.surveyRedirect + `?name=${fullName}&email=${email}&utm_term${id}`;
           forwardLink.target = '_blank';
           forwardLink.click();
         }
