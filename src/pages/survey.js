@@ -61,13 +61,15 @@ const formSteps = [
   },
   {
     name: 'type',
-    title: '¿Ya te entregaron tu depa o sigues en espera de la entrega?',
+    title: '¿Cuántos años tiene tu depa?',
     description: 'Selecciona una opción por favor',
     type: 'radio',
     options: [
-      {value: 'entregado', label: 'Ya, ya lo tengo listo'},
-      {value: '1-month', label: 'Están por entregarme en este mes'},
-      {value: '3-months', label: 'Me lo entregan en 3 meses'},
+      {value: 'por-entregar', label: 'Aún no me lo entregan'},
+      {value: 'nuevo', label: 'Me lo acaban de entregar'},
+      {value: '1-5-años', label: 'Entre 1 y 5 años'},
+      {value: '5-10-años', label: 'Entre 5 y 10 años'},
+      {value: 'más-10-años', label: 'Más de 10 años'},
     ],
     cols: 1,
     inputOptions: {required: true}
