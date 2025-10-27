@@ -6,7 +6,6 @@ import { getCookie, setCookie } from 'cookies-next';
 import { useState } from 'react';
 import { restrictNumber, emailRegExp } from '../../utils/formValidators';
 import fbEvent from '../../services/fbEvents';
-import { Select } from './formAtoms';
 
 export default function OptInForm({lastClick = ''}) {
   const [sending, setSending] = useState(false);
@@ -26,7 +25,8 @@ export default function OptInForm({lastClick = ''}) {
 
     const _fbc = getCookie('_fbc');
     const _fbp = getCookie('_fbp');
-    const payload = {...data, _fbc, _fbp};
+    const utm = getCookie('utm');
+    const payload = {...data, _fbc, _fbp, utm};
 
     fetch(info.optInWebhook, {
       method: 'POST',

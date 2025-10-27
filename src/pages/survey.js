@@ -3,9 +3,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import { Radio, Checkbox, Select } from '../components/form/formAtoms';
 import { useRouter } from 'next/router';
-import { setCookie, getCookie } from 'cookies-next';
 import { info } from '../../info';
-import fbEvent from '../services/fbEvents';
 import { restrictNumber } from '../utils/formValidators';
 
 const formSteps = [
@@ -101,7 +99,7 @@ const formSteps = [
   },
 ];
 
-export default function Survey() {
+export default function Survey({lead, ...cookies}) {
   const [formStep, setFormStep] = useState(0);
   const [inputError, setInputError] = useState(null);
   const [sending, setSending] = useState(false);
@@ -113,6 +111,8 @@ export default function Survey() {
     formState: {errors},
     watch
   } = methods;
+  const {id, row, email, phone, fullName} = lead;
+  const {_fbc, _fbp, utm} = cookies;
 
   const router = useRouter();
 
@@ -133,12 +133,8 @@ export default function Survey() {
 
   const onSubmit = (data) => {
     setSending(true);
-    const lead = getCookie('lead');
-    const {id, row, email, phone, fullName} = JSON.parse(lead);
-    const _fbc = getCookie('_fbc');
-    const _fbp = getCookie('_fbp');
 
-    const payload = {...data, id, row, fullName, email, phone, _fbc, _fbp};
+    const payload = {...data, id, row, fullName, email, phone, _fbc, _fbp, utm};
     console.log('payload',payload);
 
     fetch(info.optInWebhook, {
@@ -180,7 +176,7 @@ export default function Survey() {
                   const {name, title, description, placeholder, inputOptions} = fs;
                   return (
                     // eslint-disable-next-line react/jsx-key
-                    <div className={`my-20 flex-grow ${formStep === idx ? 'block' : 'hidden'}`}>
+                    <div id={`fs-${idx}`} className={`my-20 flex-grow ${formStep === idx ? 'block' : 'hidden'}`}>
                       <p className="ft-4 sans font-bold" dangerouslySetInnerHTML={{__html: title}}/>
                       <p className="ft-2 mt-4 mb-12" dangerouslySetInnerHTML={{__html: description}}/>
                       <input
@@ -306,22 +302,39 @@ export default function Survey() {
 }
 
 export async function getServerSideProps(ctx) {
-  const {req, res, query: {id}} = ctx;
-  const lead = getCookie('lead', {req, res});
+  const {req} = ctx;
+  const cookiesHeader = req.headers.cookie || '';
 
-  if (!lead || lead === 'null' || Object.keys(lead).length === 0) {
-    if (!id) {
-      return {
-        redirect: {
-          permanent: false,
-          destination: '/#contact',
-        },
-      };
-    } else {
-      setCookie('lead', {...lead, id}, {req, res});
-      return {props: {}};
+  const keys = ['utm', '_fbc', '_fbp', 'lead'];
+  const cookies = {};
+
+  for (const key of keys) {
+    const raw = cookiesHeader
+      .split('; ')
+      .find(c => c.startsWith(`${key}=`))
+      ?.split('=')[1];
+
+    if (!raw) continue;
+
+    try {
+      const clean = raw.startsWith('j%3A') ? raw.slice(4) : raw;
+      cookies[key] = JSON.parse(decodeURIComponent(clean));
+    } catch {
+      cookies[key] = decodeURIComponent(raw);
     }
   }
 
-  return {props: {}}
+  const {lead} = cookies;
+
+  return {
+    props: {
+      lead: {
+        fullName: lead?.fullName ?? '',
+        phone: lead?.phone ?? '',
+        whatsapp: lead?.whatsapp ?? '',
+        sheetRow: lead?.sheetRow ?? '',
+      },
+      ...cookies
+    },
+  };
 }
