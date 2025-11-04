@@ -7,9 +7,9 @@ export const info = {
     recipients: ['ventas@sibariaresidencial.com'],
     subject: 'Nuevo prospecto Sibaria Residencial',
   },
-  phoneNumber: '+523322187128',
+  phoneNumber: '+523315762682',
   whatsapp: {
-    value: '+523322187128',
+    value: '+523315762682',
     message: 'Buen día, me puede dar más información sobre su administración de departamentos?',
   },
   social: {
