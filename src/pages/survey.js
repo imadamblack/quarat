@@ -144,10 +144,10 @@ export default function Survey({lead, ...cookies}) {
         'Content-Type': 'application/json',
       },
     }).then((response) => response)
-      // .then(() => fbEvent(
-      //   'Lead',
-      //   {email, phone, externalID: id},
-      // ))
+      .then(() => fbEvent(
+        'Lead',
+        {email, phone, externalID: id},
+      ))
       // Redirect to Thank you page and Scheduler
       .then(() => {
         if (info.surveyRedirect !== '') {

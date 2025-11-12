@@ -38,7 +38,7 @@ export default function OptInForm({lastClick = ''}) {
       // Send FB Event
       .then(({id, row}) => {
         fbEvent(
-          'Lead',
+          'CompleteRegistration',
           {email: data.email, phone: data.phone, externalID: id},
         );
         setCookie('lead', {...data, id, row});
